@@ -32,35 +32,25 @@ class clsMainScreen : protected clsScreen
         clsShowClientsListScreen::ShowClientListScreen();
     }
 
-    // >>
-
     static void _AddNewClientMenu()
     {
         clsAddNewClinet::ShowAddNewClientScreen();
     }
-
-    // >>
 
     static void _UpdateClientMenu()
     {
         clsUpdateClient::ShowUpdateClientScreen();
     }
 
-    // >>
-
     static void _DeleteClientMenu()
     {
         clsDeleteClient::ShowDeleteClientScreen();
     }
 
-    // >>
-
     static void _FindClientMenu()
     {
         clsFindClient::ShowFindClientScreen();
     }
-
-    // >>
 
     static void _TotalBalancesMenu()
     {
@@ -68,8 +58,6 @@ class clsMainScreen : protected clsScreen
         cout << "\n\n";
         cout << "\t\t\t\t\t Total Balances Screen Will Show Here.... \n";
     }
-
-    // >>
 
     static void _TransactionsMenu()
     {

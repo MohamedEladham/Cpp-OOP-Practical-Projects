@@ -308,7 +308,9 @@ public:
 
 	static clsBankClient GetDeleteClient(string AccountNumber)
 	{
-		return clsBankClient(enMode::DeleteMode, "", "", "", "", AccountNumber, "", 0);
+		clsBankClient Client = Find(AccountNumber);
+		
+		return clsBankClient(enMode::DeleteMode, Client.FirstName, Client.LastName, Client.Email, Client.Phone, AccountNumber, Client.Password, Client.AccountBalance);
 	}
 
 	static clsBankClient Find(string AccountNumber)

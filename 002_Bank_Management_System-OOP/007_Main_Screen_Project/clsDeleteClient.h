@@ -20,14 +20,14 @@ public:
 
         string AccountNumber;
         cout << "\t\t\t\t\t\t > Enter Account Number: ";
-        AccountNumber = clsInputValidate::ReadString2();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        AccountNumber = clsInputValidate::ReadString();
 
         while (!clsBankClient::IsClientExist(AccountNumber))
         {
             cout << "\t\t\t\t\t\t > Client Is Not Found, Enter Another Account Number: ";
             AccountNumber = clsInputValidate::ReadString();
         }
-
 
 
         clsBankClient Client = clsBankClient::GetDeleteClient(AccountNumber);
@@ -41,7 +41,7 @@ public:
 
         if (toupper(Answer) == 'Y')
         {
-
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             clsBankClient::enSaveResults SaveResults;
             SaveResults = Client.Save(); 
 

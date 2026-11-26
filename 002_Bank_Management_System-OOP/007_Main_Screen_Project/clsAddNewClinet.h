@@ -22,7 +22,8 @@ public:
         string AccountNumber;
         cout << "\n";
         cout << "\t\t\t\t\t\t > Enter Account Number: ";
-        AccountNumber = clsInputValidate::ReadString2();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        AccountNumber = clsInputValidate::ReadString();
 
         while (clsBankClient::IsClientExist(AccountNumber))
         {

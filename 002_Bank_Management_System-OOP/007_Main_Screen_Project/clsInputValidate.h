@@ -148,7 +148,7 @@ public:
 
 		cout << "\n";
 		cout << "\t\t\t\t\t\t > Enter First Name: ";
-		Client.FirstName = ReadString2();
+		Client.FirstName = ReadString();
 
 		cout << "\t\t\t\t\t\t > Enter Last Name: ";
 		Client.LastName = ReadString();

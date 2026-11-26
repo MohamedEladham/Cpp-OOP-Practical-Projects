@@ -1,9 +1,7 @@
-
 #pragma once
 #include <iostream>
 #include <string>
 #include <cctype>
-
 #include "clsScreen.h"
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
@@ -22,7 +20,8 @@ public:
 
         string AccountNumber;
         cout << "\t\t\t\t\t\t > Enter Account Number: ";
-        AccountNumber = clsInputValidate::ReadString2();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        AccountNumber = clsInputValidate::ReadString();
 
         while (!clsBankClient::IsClientExist(AccountNumber))
         {
@@ -40,6 +39,7 @@ public:
 
         if (toupper(Answer) == 'Y')
         {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             clsInputValidate::ReadClientInfo(Client);
 
             clsBankClient::enSaveResults SaveResult;
